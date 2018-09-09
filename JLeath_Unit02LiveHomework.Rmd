@@ -1,0 +1,98 @@
+---
+title: "JLEATH_Unit02Live"
+author: "Jeff Leath"
+date: "September 9, 2018"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown test
+
+This is my file for Unit 02 Homework.
+
+[Jeff Leath](https://www.linkedin.com/in/leath/)
+
+# 1.	 (20 points) Put the following questions into RMarkdown as headers (or subheaders if you’re making question numbers headings). Be sure to answer the questions underneath each header. 
+
+##	a. What is a basic workflow for reproducible research?
+
+-Data Gathering
+-Data Analysis
+-Results Presentation
+ 
+##	b. What are five practical tips for making research reproducible?
+
+-Document Everything
+-Everything is a .txt file
+-All files should be human readable
+-Explicitly tie your files together
+-Have a plan to organize, store, and make your files available
+
+
+##	c. Give an example of how you might implement each tip.
+*-Document Everything* - make a lot of comments in your code
+
+*-Everything is a .txt file* - just requires discipline
+
+*-All files should be human readable* Use proper formating, especially line spacing
+
+*-Explicitly tie your files together* Use good file nameing conventions as well as notations in each file
+
+*-Have a plan to organize, store, and make your files available* Utilize [GetHub](https://github.com)
+
+
+
+
+##	d. Which one of these do you think will be the most difficult?
+
+I think making files human readable will be the hardest part.  The result will depend upon the level of code knowledge the reader has.
+
+
+# 2.	(20 points) Download and complete “air_hist.R” code from the Files Tab on 2DS.  You will build scatter plots using the plot function.
+
+## a.	As described in the “TODO Assignment 2: Question 2a” comment, complete the plot function regarding monthly temperature.
+
+```{r, include = TRUE}
+
+# This question uses the built-in dataset airquality which has daily air quality 
+# measurements in New York from May to September 1973
+
+# Sets the Temperature variable
+Temperature <- airquality$Temp
+
+# This is the r code for the scatterplot "Temperature by Month"
+plot(x=airquality$Month, y=Temperature, xlab = "Month", ylab = "Temperature", main = "Temperature by Month")
+```
+
+## b.	As described in the “TODO Assignment 2: Question 2b” comment, complete the plot function involving ozone.
+
+
+```{r, include = TRUE}
+# This is the r code for the scatterplot "Temperature vs Ozone"
+plot(x=Temperature, y=airquality$Ozone, xlab = "Temperature", ylab = "Ozone", main = "Temperature by Ozone")
+```
+
+
+# 3. Download and complete “knit_cars.Rmd” in the Files tab on 2DS. 
+
+## a.	As described in the “TODO Assignment 2: Question 3a” comment, complete a plot function for Temperature and Pressure
+
+```{r, include= TRUE}
+## This is the r code to plot Pressure vs Temperature
+plot(pressure$pressure, pressure$temperature,  xlab = "Pressure", ylab = "Temperature", main = "Pressure vs Temperature")
+```
+
+
+## b.	As described in the “TODO Assignment 2: Question 3b” comment, complete a similar plot function that reverses the two axes.
+
+```{r, include=TRUE}
+## This is the r code to plot Temperature vs Pressure
+plot(pressure$temperature, pressure$pressure, xlab = "Temperature", ylab = "Pressure", main = "Temperature vs Pressure")
+```
+
+
+
+

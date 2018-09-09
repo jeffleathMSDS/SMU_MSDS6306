@@ -1,0 +1,52 @@
+---
+title: "JLeath_Unit02_BDLT_20180909"
+author: "Jeff Leath"
+date: "September 9, 2018"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Stackloss Data
+
+### Summary 
+
+This is the summary() function of this dataset
+
+```{r, include = TRUE}
+summary(stackloss)
+## this is the r code for the summary function
+```
+
+####    Interpretation
+
+There are four variables contained in this data frame
+
+
+### STR function
+
+This is the "str" function of this dataset
+
+``` {r, include = TRUE}
+str(stackloss)
+## This is the r code for the str function
+```
+
+####    Interpretation
+
+There are 21 rows of data contains four variables each, with each being a numeric data
+
+
+
+``` {r, include = TRUE}
+plot(stackloss$stack.loss, stackloss$Air.Flow)
+## This is the r code for to create a scatterplot
+```
+
+####    Interpretation
+
+As the airflow increases, the stackloss also increases.
+
+

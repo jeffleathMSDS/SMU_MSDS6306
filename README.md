@@ -1,5 +1,11 @@
 # SMU_MSDS6306
 
+This is my first repo so cut me some slack!
+
+I am using this repo for my work in SMU's Masters of Data Science program.
+
+
+
 R version 3.5.1 (2018-07-02)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows >= 8 x64 (build 9200)

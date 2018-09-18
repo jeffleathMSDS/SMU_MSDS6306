@@ -1,0 +1,62 @@
+---
+title: "MSDS6306 Unit03 Live Assignment"
+author: "Jeff Leath"
+date: "September 15, 2018"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## GIT
+
+This is my work.
+
+In a Git Terminal:
+
+*initialized git*
+
+git init
+
+*changed directory*
+
+cd \Users\jeffl>cd C:\Users\jeffl\Dropbox\Git
+
+*cloned the dataset to my new local directory*
+
+git clone https://github.com/caesar0301/awesome-public-datasets
+
+##Importing in the Titanic CSV File
+
+``` {r}
+## calls the readr
+
+library(readr)
+
+## reads the csv file as variable df
+df <- read_csv("awesome-public-datasets/Datasets/titanic.csv/titanic.csv")
+View(df)
+```
+
+``` {r}
+## sets the dataset df as x
+x<- (df)
+## uses the lapply function to give the mean of the variables
+lapply(x, mean)
+```
+
+
+## Question 3
+
+### Loading Sleep Data .csv file
+
+``` {r}
+## reads the csv file as variable sleep
+sleep <- read_csv("sleep_data_01.csv")
+View(sleep)
+```
+
+

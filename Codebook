@@ -1,0 +1,7 @@
+This codebook will provide a brief overview of the files in this repo:
+
+JLeath_DDS_Unit05HWb.Rmd:  rmarkup file for Unit05 homework submission
+JLeath_DDS_Unit05HWb.html:  HTML output from running knitting Unit05 Homework
+TopGirlNames.csv:  output file from r code in Unit05 homework
+yob2015.txt: source data for Unit05 Homework
+yob2016.txt: source data for Unit05 Homework

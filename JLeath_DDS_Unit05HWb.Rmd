@@ -1,0 +1,117 @@
+---
+title: "DDS Unit05 Homework"
+author: "Jeff Leath"
+date: "October 1, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basic Setup
+
+Here, I am setting my working directory and loading the packages I need.
+
+
+```{r}
+## set working directory
+setwd("C:/Users/jeffl/Dropbox/SMU/MSDS6306_DoingDataScience/Unit05/HW")
+
+## load packages)
+library(base)
+library("dplyr")
+
+```
+
+## Problem 1: Data Munging
+
+Commentary
+
+```{r }
+## bring in file
+
+df <-read.delim('yob2016.txt', header = FALSE, sep = ";", dec = ",")
+
+## name column variables
+names(df) <- c("fname", "gender", "count")
+
+## review
+head(df)
+str(df)
+
+## find name with yyy at the end
+
+prob <-grep("yyy$", df$fname, value = TRUE)
+prob
+
+## isolate searched parameter
+df_delete <- subset(df, fname=="Fionayyy")
+nrow(df_delete)
+str(df_delete)
+
+## subset of df to exlcude specific row
+y2016 <-df[!grepl("Fionayyy", df$fname),]
+str(y2016)
+
+
+```
+
+## Problem 2: Data Merging
+
+Commentary
+
+```{r }
+## read in second file
+y2015 <-read.delim('yob2015.txt', header = FALSE, sep = ",", dec = ".")
+str(y2015)
+
+## name column variables
+names(y2015) <- c("fname", "gender", "count")
+
+## look at the last 10 rows
+tail(y2015,10)
+
+## merge tables
+final <- merge.data.frame(y2015, y2016, by=c("fname", "gender"))
+names(final) <- c("fname", "gender", "2015 Count", "2016 Count")
+```
+## Problem 3: Data Summary
+
+Commentary
+
+```{r }
+## add total column
+final$Total <- final$`2015 Count`+final$`2016 Count`
+str(final)
+
+# sort by total children (descending)
+final2 <- final[order(-final$Total),]
+head(final2,10)
+
+# girls only
+finalgirls <-subset(final2, gender == 'F')
+head(finalgirls,10)
+
+# name and total only
+girl2 <- select(finalgirls, fname, Total)
+head(girl2,10)
+
+# Write CSV file
+write.csv(girl2, file = "TopGirlNames.csv")
+```
+
+## Problem 4: GitHub
+
+I have a DDS Homework repo at the link below.
+
+https://github.com/jeffleathMSDS/SMU_MSDS6306
+
+## Codebook
+
+This analysis was a consolidation of two files which listed the number of children named [fname] in birth years 2015 and 2016.
+
+Gender is denoted: M=Male, F=Female
+
+Total: is the sum of named children in both 2015 and 2016
+
